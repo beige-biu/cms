@@ -11,9 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BaseController {
 
 
-    @RequestMapping("index")
+    @RequestMapping("/")
     private String index(){
 
         return "index";
     }
+
+    @RequestMapping("/login")
+    private String login(){
+
+        return "login";
+    }
+
+
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="/com/wenyu/cms/mapper/CategoryMapper">
+    <resultMap id="categoryResultMap" type="category">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="name" jdbcType="VRCHAR" property="name"></result>
+        <result column="sorted" jdbcType="INTEGER" property="sorted"></result>
+        <association property="channel" column="id" javaType="channel" >
+            <id column="channel_id" property="id" jdbcType="INTEGER"/>
+            <result property="name" column="name"></result>
+            <result property="description" column="description"></result>
+            <result property="icon" column="icon"></result>
+            <result property="sorted" column="sorted"></result>
+        </association>
+    </resultMap>
+
+    <sql id="categorySql">
+        id, name, channel_id, sorted
+    </sql>
+
+    <select id="queryCategoryByChannel" parameterMap="int" resultMap="categoryResultMap">
+        select 
+        <include refid="categorySql"></include>
+        from cms_category
+        where channel_id = #{channel_id}
+        order by sorted
+    </select>
+
+</mapper>

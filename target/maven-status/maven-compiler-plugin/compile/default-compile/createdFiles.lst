@@ -1,1 +1,14 @@
+com\wenyu\cms\controller\UserController.class
+com\wenyu\cms\bean\Channel.class
+com\wenyu\cms\mapper\UserMapper.class
+com\wenyu\cms\bean\User.class
+com\wenyu\cms\mapper\ChannelMapper.class
+com\wenyu\cms\service\ChannelCategoryService.class
+com\wenyu\cms\bean\UserForm.class
+com\wenyu\cms\mapper\CategoryMapper.class
 com\wenyu\cms\controller\BaseController.class
+com\wenyu\cms\cache\Cache.class
+com\wenyu\cms\meta\Gender.class
+com\wenyu\cms\service\impl\ChannelCategoryServiceImpl.class
+com\wenyu\cms\bean\Category.class
+com\wenyu\cms\bean\Slide.class

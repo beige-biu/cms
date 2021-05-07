@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="/com/wenyu/cms/mapper/ChannelMapper">
+
+    <resultMap id="channelResultMap" type="channel">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="description" column="description"></result>
+        <result property="icon" column="icon"></result>
+        <result property="sorted" column="sorted"></result>
+    </resultMap>
+
+    <!--channel的sql片段-->
+    <sql id="channelSql">
+        id,name,description,icon,sorted
+    </sql>
+
+    <!--查询所有频道信息-->
+    <select id="queryAllChannels" resultMap="channelResultMap" >
+        select
+        <include refid="channelSql" />
+        from cms_channel
+        order by sorted
+    </select>
+
+</mapper>
